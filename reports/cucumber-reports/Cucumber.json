@@ -1,0 +1,216 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Verify POST /account API successfully with JWT and PDI",
+        "description": "",
+        "id": "post-/account-api;verify-post-/account-api-successfully-with-jwt-and-pdi",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1064175795,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Netflix Middleware API is up and running",
+            "match": {
+              "location": "PostAccount.netflix_Middleware_API_is_up_and_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2196002824,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User submit POST account",
+            "match": {
+              "location": "PostAccount.user_submit_POST_account()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 24103859,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "POST account API return with status code as 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "PostAccount.post_account_API_return_with_status_code_as(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13290932,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify body have id as \"c0a8e271-720b-1e92-8172-111f8a880000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "c0a8e271-720b-1e92-8172-111f8a880000",
+                  "offset": 24
+                }
+              ],
+              "location": "PostAccount.verifyBodyHaveIdAs(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 179634,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify body have token as \"d0gaZcDvErFKNUQIcwp5_oBTU3c\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "d0gaZcDvErFKNUQIcwp5_oBTU3c",
+                  "offset": 27
+                }
+              ],
+              "location": "PostAccount.verifyBodyHaveTokenAs(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 169768,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Verify body have created as \"2020-05-14T02:59:39+0000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2020-05-14T02:59:39+0000",
+                  "offset": 29
+                }
+              ],
+              "location": "PostAccount.verifyBodyHaveCreatedAs(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 152764,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify body have updated as \"2020-05-14T02:59:39+0000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2020-05-14T02:59:39+0000",
+                  "offset": 29
+                }
+              ],
+              "location": "PostAccount.verifyBodyHaveUpdatedAs(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "POST /account API",
+    "description": "",
+    "id": "post-/account-api",
+    "keyword": "Feature",
+    "uri": "account/post/PostAccount.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "User do Sign Up successfully",
+        "description": "",
+        "id": "user-do-sign-up-via-netflix-pi;user-do-sign-up-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 424244,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Netflix Middleware API is up and running",
+            "match": {
+              "location": "PostAccount.netflix_Middleware_API_is_up_and_running()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 467836446,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User submit POST account",
+            "match": {
+              "location": "PostAccount.user_submit_POST_account()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 218139,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "POST account API return with status code as 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "PostAccount.post_account_API_return_with_status_code_as(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 584106706,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "PAI is generated successfully with status \"new\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "new",
+                  "offset": 43
+                }
+              ],
+              "location": "GetAccount.paiIsGeneratedSuccessfullyWithStatus(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "User do Sign Up via Netflix PI",
+    "description": "",
+    "id": "user-do-sign-up-via-netflix-pi",
+    "keyword": "Feature",
+    "uri": "e2e/EndToEnd.feature"
+  }
+]

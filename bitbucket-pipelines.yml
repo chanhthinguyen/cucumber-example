@@ -1,0 +1,53 @@
+definitions:
+  services:
+    docker:
+      memory: 1024
+
+  caches:
+    maven: ~/.m2/repository
+
+  test_dev: &test_dev
+    name: Run test on Dev env
+    image: maven:3.6.3-jdk-8-slim
+    trigger: manual
+    caches:
+      - maven
+    script:
+      - ls -la
+      - mvn test -Denv=dev
+
+  test_alpha: &test_alpha
+    name: Run test on Alpha env
+    image: maven:3.6.3-jdk-8-slim
+    caches:
+      - maven
+    script:
+      - mvn test -Denv=alpha
+
+  test_preprod: &test_preprod
+    name: Run test on Preprod env
+    image: maven:3.6.3-jdk-8-slim
+    trigger: manual
+    caches:
+      - maven
+    script:
+      - mvn test -Denv=preprod
+
+  test_prod: &test_prod
+    name: Run test on Production env
+    image: maven:3.6.3-jdk-8-slim
+    trigger: manual
+    caches:
+      - maven
+    script:
+      - mvn test -Denv=prod
+
+pipelines:
+  default:
+    #- step: *test_alpha
+    # - step: *test_dev
+
+  branches:
+    master:
+      #- step: *test_alpha
+      # - step: *test_dev
